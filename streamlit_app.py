@@ -4,6 +4,9 @@ import math
 import pandas as pd
 import streamlit as st
 
+header = {
+    'authorization': st.secrets['auth_token']}
+
 """
 # Welcome to Streamlit!
 This is my first try. 
