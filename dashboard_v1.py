@@ -11,6 +11,8 @@ import pandas as pd
 # Get the access token from the environment variable
 #ACCESS_TOKEN = os.environ['DROPBOX_ACCESS_TOKEN']
 
+ACCESS_TOKEN = os.environ.get('DROPBOX_ACCESS_TOKEN')
+
 # Initialize Dropbox client
 dbx = dropbox.Dropbox(ACCESS_TOKEN)
 
