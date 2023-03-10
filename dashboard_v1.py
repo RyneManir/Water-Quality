@@ -8,7 +8,7 @@ import dropbox
 import pandas as pd
 
 # Get the access token from the environment variable
-ACCESS_TOKEN = os.environ['D_access_token']
+ACCESS_TOKEN = os.environ['D_ACCESS_TOKEN']
 
 # Authenticate with Dropbox using your access token
 dbx = dropbox.Dropbox(ACCESS_TOKEN)
