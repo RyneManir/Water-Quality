@@ -8,32 +8,11 @@ import dropbox
 import pandas as pd
 
 
-# Get access token and refresh token from environment variables
-ACCESS_TOKEN = os.environ['DROPBOX_ACCESS_TOKEN']
-REFRESH_TOKEN = os.environ['DROPBOX_REFRESH_TOKEN']
-
-# Initialize Dropbox client with access token
-client = dropbox.Dropbox(ACCESS_TOKEN)
-
-# Try to make an API call with the client
-try:
-    response = client.files_list_folder('')
-    print(response)
-
-# If the access token has expired, use the refresh token to obtain a new access token
-except dropbox.exceptions.AuthError as e:
-    if e.error.is_expired_token():
-        new_access_token, _ = client.oauth2_token_refresh(REFRESH_TOKEN)
-        client = dropbox.Dropbox(new_access_token)
-        response = client.files_list_folder('')
-        print(response)
-
-
 # Get the access token from the environment variable
-#ACCESS_TOKEN = os.environ['DROPBOX_ACCESS_TOKEN']
+ACCESS_TOKEN = os.environ['DROPBOX_ACCESS_TOKEN']
 
 # Initialize Dropbox client
-#dbx = dropbox.Dropbox(ACCESS_TOKEN)
+dbx = dropbox.Dropbox(ACCESS_TOKEN)
 
 
 # Specify the name of the file and folder you want to access
