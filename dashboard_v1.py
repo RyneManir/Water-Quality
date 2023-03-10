@@ -7,11 +7,15 @@ import dropbox
 
 import pandas as pd
 
+import os
+import dropbox
+
 # Get the access token from the environment variable
 ACCESS_TOKEN = os.environ['DROPBOX_ACCESS_TOKEN']
 
-# Authenticate with Dropbox using your access token
+# Initialize Dropbox client
 dbx = dropbox.Dropbox(ACCESS_TOKEN)
+
 
 # Specify the name of the file and folder you want to access
 file_name = "Pourashava_v4.xlsx"
